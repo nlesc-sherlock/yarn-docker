@@ -1,0 +1,47 @@
+
+
+
+//    PLUGINS
+// ==============
+plugins {
+    // Changes in the plugins section should be also be applied to build.offline.gradle
+    id 'java'
+    id 'distribution'
+    // publishing
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.2'
+    // ide
+    id 'idea'
+    id 'eclipse'
+}
+
+
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+
+    compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.7.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-common', version: '2.7.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-client', version: '2.7.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-server', version: '2.7.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-yarn-api', version: '2.7.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-minicluster', version: '2.7.1'
+
+
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+
+    // Runtime dependencies
+    runtime group: 'ch.qos.logback', name: 'logback-core', version: '1.0.11'
+    runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.11'
+
+    // Testing dependencies
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

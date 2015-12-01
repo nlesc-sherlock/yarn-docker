@@ -1,0 +1,2 @@
+#!/bin/sh
+yarn jar yarn-docker.jar org.apache.hadoop.yarn.applications.distributedshell.Client --shell_command docker -jar yarn-docker.jar
